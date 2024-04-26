@@ -17,3 +17,5 @@ python main.py FILENAME
 ```
 
 The analysis will be exported to FILENAME-analysis-(date).json
+
+Remember to include your OpenAI API key in api-key.txt (echo your key there)
