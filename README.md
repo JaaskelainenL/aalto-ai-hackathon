@@ -19,3 +19,5 @@ python main.py FILENAME
 The analysis will be exported to FILENAME-analysis-(date).json
 
 Remember to include your OpenAI API key in api-key.txt (echo your key there)
+
+Also included with this repo is a little test.py file which will check a json file and delete it and the file if there is no product to be bought.
