@@ -9,5 +9,11 @@ Activate it by
 source python-env/bin/activate
 ```
 
-Use pip to install openai and azure-ai-formrecognizer==3.3.0
+Use pip to install openai
 
+This script is used the following way:
+```bash
+python main.py FILENAME
+```
+
+The analysis will be exported to FILENAME-analysis-(date).json
