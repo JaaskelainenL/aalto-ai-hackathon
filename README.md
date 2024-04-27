@@ -9,7 +9,10 @@ Activate it by
 source python-env/bin/activate
 ```
 
-Use pip to install openai
+Use pip to install the required packages
+```bash
+pip install openai pypdf2 python-docx
+```
 
 This script is used the following way:
 ```bash
