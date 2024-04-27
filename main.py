@@ -5,6 +5,8 @@ import docx
 import os
 import sys
 
+CHARACTER_LIMIT = 5000
+
 if len(sys.argv) != 2:
         print("Usage: python main.py FILENAME")
         sys.exit(1)  # Exit with error
@@ -71,7 +73,7 @@ response = client.chat.completions.create(
 
 
     {"role": "system", "content": "Your awnser must only be the JSON. Do not include markdown or anything else."},
-    {"role": "user", "content": content},
+    {"role": "user", "content": content[:CHARACTER_LIMIT]},
     
   ]
 )
