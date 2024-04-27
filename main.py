@@ -1,6 +1,8 @@
 from openai import OpenAI
 from PyPDF2 import PdfReader
 from datetime import datetime
+import docx
+import os
 import sys
 
 if len(sys.argv) != 2:
@@ -27,7 +29,31 @@ def readPdf(filename):
     return txt
 
 
-content = readPdf(FILENAME)
+def readDocx(filename):
+    doc = docx.Document(filename)
+    fullText = []
+    for para in doc.paragraphs:
+        fullText.append(para.text)
+    return '\n'.join(fullText)
+
+
+
+
+content = ""
+
+filetype = os.path.splitext(FILENAME)[1:] 
+
+
+if filetype[0].lower() == ".pdf":
+  content = readPdf(FILENAME)
+elif filetype[0].lower() == ".docx":
+  content = readDocx(FILENAME)
+else:
+  exit("Invalid file type")
+
+
+
+
 
 response = client.chat.completions.create(
   model="gpt-3.5-turbo",
